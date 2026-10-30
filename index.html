@@ -1,0 +1,514 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wedding soon</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="assets/img/favicon.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans&display=swap" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Lightbox -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body class="overflow-hidden">
+
+    <!-- MUSIC -->
+    <audio src="assets/music/song.mp3" loop class="music"></audio>
+    <audio src="assets/music/door.mp3" class="sound-door"></audio>
+
+    <!-- OPENING / PINTU -->
+    <div id="door-section" class="open" onclick="mulai()">
+        <h1 class="heading-door left huruf-sambung">kean</h1>
+        <h1 class="heading-door right huruf-sambung">melisa</h1>
+
+        <div class="doors">
+            <div class="door left">
+                <img src="assets/img/door-left.jpeg" alt="Pintu kiri">
+            </div>
+
+            <div class="door right">
+                <img src="assets/img/door-right.jpeg" alt="Pintu kanan">
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content-section">
+
+        <!-- NAVBAR -->
+        <ul class="wedding-nav">
+
+            <!-- IKON KIRI 1 -->
+            <li>
+                <a href="#acara-section" aria-label="Acara">
+                    <i class="fas fa-fw fa-calendar-day"></i>
+                </a>
+            </li>
+
+            <!-- IKON KIRI 2 -->
+            <li>
+                <a href="#lokasi-section" aria-label="Lokasi">
+                    <i class="fas fa-fw fa-location-dot"></i>
+                </a>
+            </li>
+
+            <!-- IKON KIRI 3 -->
+            <li>
+                <a href="#love-story-section" aria-label="Love Story">
+                    <i class="fas fa-fw fa-heart"></i>
+                </a>
+            </li>
+
+            <!-- PIRINGAN HITAM TENGAH -->
+            <li class="music-item">
+                <a href="#" class="nav-item-music rotate" id="music-button"
+                   onclick="toggleMusic(event)" aria-label="Putar musik">
+                    <i class="fas fa-fw fa-compact-disc"></i>
+                </a>
+            </li>
+
+            <!-- IKON KANAN 1 -->
+            <li>
+                <a href="#galeri-section" aria-label="Galeri">
+                    <i class="fas fa-fw fa-image"></i>
+                </a>
+            </li>
+
+            <!-- IKON KANAN 2 -->
+            <li>
+                <a href="#gift-section" aria-label="Wedding Gift">
+                    <i class="fas fa-fw fa-gift"></i>
+                </a>
+            </li>
+
+            <!-- IKON KANAN 3 -->
+            <li>
+                <a href="#pembuka-section" aria-label="Pembuka Undangan">
+                    <i class="fas fa-fw fa-envelope-open-text"></i>
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- HERO SECTION -->
+        <section id="hero-section" class="d-flex align-items-center">
+            <div class="container text-center">
+                <h4 class="my-2 text-white">
+                    Kepada tamu terhormat <span id="tamu-terhormat"></span>
+                </h4>
+
+                <h1 class="my-2 text-white huruf-sambung">Kean & Melisa</h1>
+
+                <h4 class="my-2 text-white">
+                    Akan segera melangsungkan pernikahan pada tanggal
+                </h4>
+
+                <h4 class="my-2 text-white">Rabu, 10 Februari 2027</h4>
+
+                <div class="row my-3 d-flex justify-content-center" id="countdown-wedding">
+                    <div class="col-lg-1 col-3">
+                        <div class="text-center p-2 rounded text-light">
+                            <h5>0</h5> Hari
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1 col-3">
+                        <div class="text-center p-2 rounded text-light">
+                            <h5>0</h5> Jam
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1 col-3">
+                        <div class="text-center p-2 rounded text-light">
+                            <h5>0</h5> Menit
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1 col-3">
+                        <div class="text-center p-2 rounded text-light">
+                            <h5>0</h5> Detik
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#pembuka-section"
+                   class="rounded-pill text-decoration-none btn btn-lg btn-get-started py-3">
+                    <i class="fas fa-fw fa-envelope-open-text"></i>
+                    Buka Undangan
+                </a>
+            </div>
+        </section>
+
+        <!-- PEMBUKA SECTION -->
+        <section id="pembuka-section" class="pembuka-section section-bg py-5">
+            <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center">
+                            <h1 class="text-pink huruf-sambung fw-bold">Assalamu'alaikum</h1>
+                            <h3>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h3>
+
+                            <p>
+                                Wahai manusia, bertakwalah kepada Tuhanmu yang telah menciptakanmu
+                                dari diri yang satu (Adam) dan Dia menciptakan darinya pasangannya
+                                (Hawa). Dari keduanya Allah memperkembangbiakkan laki-laki dan
+                                perempuan yang banyak. Bertakwalah kepada Allah yang dengan
+                                nama-Nya kamu saling meminta dan (peliharalah) hubungan kekeluargaan.
+                                Sesungguhnya Allah selalu menjaga dan mengawasimu.
+                            </p>
+
+                            <p>(QS. An-Nisa' (4) : 1)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-4 justify-content-center">
+                    <div class="col-lg-8 text-center" data-aos="fade-up"
+                         data-aos-easing="linear" data-aos-duration="1500">
+                        <img src="assets/img/wedding.jpg" alt="Wedding"
+                             class="img-fluid rounded-pill">
+                    </div>
+                </div>
+
+                <div class="row my-3 justify-content-between">
+                    <div class="col rounded" data-aos="fade-right"
+                         data-aos-easing="linear" data-aos-duration="1500">
+                        <div class="p-2 pt-3 text-center">
+                            <h1 class="text-center huruf-sambung">Kean nugraha</h1>
+                            <p>Putra pertama dari pasangan:</p>
+                            <p>Bpk.Jumadi & Ibu.Minah</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 my-auto" data-aos="fade-down"
+                         data-aos-easing="linear" data-aos-duration="1500">
+                        <h1 class="text-center huruf-sambung">&</h1>
+                    </div>
+
+                    <div class="col rounded" data-aos="fade-left"
+                         data-aos-easing="linear" data-aos-duration="1500">
+                        <div class="p-2 pt-3 text-center">
+                            <h1 class="text-center huruf-sambung">Melisa anugrah</h1>
+                            <p>Putri kedua dari pasangan:</p>
+                            <p>Bpk.Bambang & Ibu.Siti</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ACARA SECTION -->
+        <section id="acara-section" class="acara-section py-5 mb-5">
+            <div class="container" data-aos="fade-up"
+                 data-aos-easing="linear" data-aos-duration="1500">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title">
+                            <h1 class="text-pink huruf-sambung fw-bold">Acara Pernikahan</h1>
+                            <p>
+                                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila,
+                                Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restunya,
+                                kami ucapkan terima kasih.
+                            </p>
+                        </div>
+
+                        <div class="row justify-content-between px-3 text-center">
+                            <div class="col-lg-6 border my-2 rounded p-3 card-acara"
+                                 data-aos="fade-right" data-aos-easing="linear"
+                                 data-aos-duration="1500">
+
+                                <h4>Pernikahan</h4>
+                                <hr>
+
+                                <p><i class="fas fa-fw fa-calendar-day"></i> Rabu, 10 Februari 2027</p>
+                                <p><i class="fas fa-fw fa-clock"></i> 09:00 WIB - 12:00 WIB</p>
+                                <p><i class="fas fa-fw fa-location-dot"></i> Lokasi di Ponorogo</p>
+
+                                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nikah&details=Nikah+kean+dan+melisa&location=Salah+satu+gedung+diponorogo&dates=20270210T020000Z%2F20270210T060000Z"
+                                   class="btn btn-lg btn-pink rounded-pill" target="_blank">
+                                    <i class="fas fa-fw fa-calendar-day"></i>
+                                    Simpan ke Kalender
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        
+<!-- LOKASI SECTION -->
+<section id="lokasi-section" class="lokasi-section py-5 section-bg">
+    <div class="container" data-aos="fade-up"
+         data-aos-easing="linear" data-aos-duration="1500">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h1 class="text-pink huruf-sambung fw-bold">
+                        Lokasi Pernikahan
+                    </h1>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center">
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Gedung+Sasana+Praja+Ponorogo"
+                           target="_blank"
+                           class="btn btn-lg btn-pink rounded-pill mb-4">
+                            <i class="fas fa-fw fa-location-dot"></i>
+                            Buka di Google Maps
+                        </a>
+
+                        <iframe
+                            class="mb-5 mb-lg-0 border-pink"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.255623302544!2d111.45684997743389!3d-7.868297471922821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e799f9b64241a39%3A0x656ecc9947a35012!2sGedung%20Sasana%20Praja!5e0!3m2!1sid!2sid!4v1793334423770!5m2!1sid!2sid"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+        <!-- LOVE STORY SECTION -->
+        <section id="love-story-section" class="love-story-section py-5">
+            <div class="container" data-aos="fade-up"
+                 data-aos-easing="linear" data-aos-duration="1500">
+
+                <div class="section-title">
+                    <h1 class="text-pink huruf-sambung fw-bold">Love Story</h1>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg">
+                        <ul class="timeline">
+
+                            <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                                <div class="timeline-badge"
+                                     style="background-image: url('assets/img/timeline/timeline1.jpg');"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Ocean Date</h3>
+                                        <span class="timeline-date">15 Mei 2024</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Di sebuah pantai yang berada di Trenggalek menjadi saksi kisah cinta mereka.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="timeline-inverted" data-aos="fade-left"
+                                data-aos-easing="linear" data-aos-duration="1500">
+                                <div class="timeline-badge"
+                                     style="background-image: url('assets/img/timeline/timeline2.jpg');"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Canda Dan Tawa</h3>
+                                        <span class="timeline-date">2026</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Sorak sorai tawa mereka menggema seakan kisah cinta mereka mampu menembus rasa sedih di dunia ini.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                                <div class="timeline-badge"
+                                     style="background-image: url('assets/img/timeline/timeline3.jpg');"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Kesalahpahaman</h3>
+                                        <span class="timeline-date">2025</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Terkadang hubungan akan menimbulkan kesalahpahaman diantara mereka, tetapi mereka tak menyerah akan cintanya dan semakin mengerti apa artinya menjaga dan mengalah.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="timeline-inverted" data-aos="fade-left"
+                                data-aos-easing="linear" data-aos-duration="1500">
+                                <div class="timeline-badge"
+                                     style="background-image: url('assets/img/timeline/timeline4.jpg');"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">High school</h3>
+                                        <span class="timeline-date">2019</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Kisah cinta mereka dimulai dari masa SMA.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERI SECTION -->
+        <section id="galeri-section" class="galeri-section py-5 section-bg">
+            <div class="container" data-aos="fade-up"
+                 data-aos-easing="linear" data-aos-duration="1500">
+
+                <div class="section-title">
+                    <h1 class="huruf-sambung text-pink fw-bold">Galeri</h1>
+                </div>
+
+                <div class="row" data-masonry='{ "percentPosition": true }'>
+
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="assets/img/galeri/foto1.jpg" data-lightbox="nobitaShizuka">
+                            <img src="assets/img/galeri/foto1.jpg" alt="Foto 1" class="card-img border-pink">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="assets/img/galeri/foto2.jpg" data-lightbox="nobitaShizuka">
+                            <img src="assets/img/galeri/foto2.jpg" alt="Foto 2" class="card-img border-pink">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="assets/img/galeri/foto3.jpg" data-lightbox="nobitaShizuka">
+                            <img src="assets/img/galeri/foto3.jpg" alt="Foto 3" class="card-img border-pink">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="assets/img/galeri/foto4.jpg" data-lightbox="nobitaShizuka">
+                            <img src="assets/img/galeri/foto4.jpg" alt="Foto 4" class="card-img border-pink">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="assets/img/galeri/foto5.jpg" data-lightbox="nobitaShizuka">
+                            <img src="assets/img/galeri/foto5.jpg" alt="Foto 5" class="card-img border-pink">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <a href="assets/img/galeri/foto6.jpg" data-lightbox="nobitaShizuka">
+                            <img src="assets/img/galeri/foto6.jpg" alt="Foto 6" class="card-img border-pink">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12 text-center">
+                        <iframe class="border-pink" width="100%" height="500"
+                                src="https://www.youtube.com/embed/VQBa6OGa4Hc?si=3kkXP2f9nDRz66RQ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WEDDING GIFT SECTION -->
+        <section id="gift-section" class="gift-section py-5"
+                 style="padding-bottom: 150px !important;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+
+                        <div class="section-title">
+                            <h1 class="huruf-sambung text-pink fw-bold">Wedding Gift</h1>
+                            <p>
+                                Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah pernikahan
+                                dapat melalui virtual account atau e-wallet di bawah ini.
+                            </p>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center">
+
+                                <button type="button"
+                                        class="text-center btn btn-lg btn-pink mb-5 rounded-pill"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseHadiah">
+                                    <i class="fa fa-fw fa-gift"></i>
+                                    Kirim Hadiah
+                                </button>
+
+                                <div class="collapse" id="collapseHadiah">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="credit-card text-start my-3">
+                                            <img src="assets/img/card/bca.jpg"
+                                                 alt="Logo BCA" class="card-logo">
+
+                                            <div class="card-body px-0">
+                                                <h5 class="card-title">Bank Central Asia (BCA)</h5>
+                                                <p class="card-text mb-5">1234567890</p>
+                                                <p class="card-text mb-5">Kean Nugraha</p>
+
+                                                <button class="btn btn-outline-light btn-sm"
+                                                        onclick="navigator.clipboard.writeText('1234567890'); alert('Nomor rekening berhasil disalin!');">
+                                                    <i class="fas fa-copy"></i>
+                                                    Salin Nomor Rekening
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT LIBRARIES -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+
+    <!-- SCRIPT PROJECT KAMU -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
